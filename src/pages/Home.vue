@@ -348,55 +348,91 @@
             </div>
         </div>
 
-        <!-- Reviews Section -->
-        <div id="reviews" class="px-4 flex flex-col gap-5 pt-5 lg:h-[630px] md:h-[580px] sm:h-[830px] justify-center bg-[#F9FAFB]">
-            <div class="flex flex-col justify-center items-center">
-                <p class="text-[36px] font-bold">Foydalanuvchilar fikrlari</p>
-                <p class="text-gray-600 italic">Sayt va testlar haqida foydalanuvchilarimiz fikrlari.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 justify-items-center">
-                <div class="bg-white border flex-col flex items-center justify-center border-gray-300 p-3 md:p-4 w-[450px] h-[200px] md:h-[220px] lg:h-[200px] rounded-3xl">
-                    <div class="icon w-[40px] md:w-[45px] p-2 rounded-2xl">
-                        <UserCircleIcon class="w-[25px] md:w-[30px] text-gray-600" />
-                    </div>
-                    <p class="font-semibold text-center text-base md:text-lg">Aziza Karimova</p>
-                    <p class="text-sm md:text-base text-center">"IELTS testlari juda sifatli va haqiqiy imtihonlarga o'xshash edi!"</p>
-                    <div class="flex text-yellow-400 mt-2">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-                    </div>
+        <!-- Modern Reviews Section -->
+        <div id="reviews" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Foydalanuvchilar fikrlari</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Sayt va testlar haqida foydalanuvchilarimiz fikrlari</p>
                 </div>
-                <div class="bg-white border flex-col flex items-center justify-center border-gray-300 p-3 md:p-4 w-[450px] h-[200px] md:h-[220px] lg:h-[200px] rounded-3xl">
-                    <div class="icon w-[40px] md:w-[45px] p-2 rounded-2xl">
-                        <UserCircleIcon class="w-[25px] md:w-[30px] text-gray-600" />
-                    </div>
-                    <p class="font-semibold text-center text-base md:text-lg">Sardor Toshmatov</p>
-                    <p class="text-sm md:text-base text-center">"IELTS Reading bo'limida ko'p yaxshilandi. Platforma juda qulay!"</p>
-                    <div class="flex text-yellow-400 mt-2">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-                    </div>
-                </div>
-                <div class="bg-white border flex-col flex items-center justify-center border-gray-300 p-3 md:p-4 w-[450px] h-[200px] md:h-[220px] lg:h-[200px] rounded-3xl">
-                    <div class="icon w-[40px] md:w-[45px] p-2 rounded-2xl">
-                        <UserCircleIcon class="w-[25px] md:w-[30px] text-gray-600" />
-                    </div>
-                    <p class="font-semibold text-center text-base md:text-lg">Malika Yusupova</p>
-                    <p class="text-sm md:text-base text-center">"Listening bo'limi juda yaxshi ishlangan. Audio sifatli!"</p>
-                    <div class="flex text-yellow-400 mt-2">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="flex md:hidden lg:hidden justify-center mt-6">
-                <router-link to="/reviews" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 md:py-3 px-6 md:px-8 rounded-lg transition-colors text-sm md:text-base">
-                    Hammasini ko'rish
-                </router-link>
-            </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Review Card 1 -->
+                    <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                        <div class="relative p-6 md:p-8">
+                            <div class="flex items-center mb-4 md:mb-6">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                                    <UserCircleIcon class="w-6 h-6 md:w-8 md:h-8 text-white" />
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm md:text-base">Aziza Karimova</h4>
+                                    <div class="flex text-yellow-400 mt-1">
+                                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">
+                                "IELTS testlari juda sifatli va haqiqiy imtihonlarga o'xshash edi! Natijam yaxshilandi."
+                            </p>
+                            <div class="text-xs md:text-sm text-gray-500">2 kun oldin</div>
+                        </div>
+                    </div>
 
-            <div class="hidden lg:flex justify-center mt-6">
-                <router-link to="/reviews" class="button_blue">
-                    Hammasini ko'rish
-                </router-link>
+                    <!-- Review Card 2 -->
+                    <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                        <div class="relative p-6 md:p-8">
+                            <div class="flex items-center mb-4 md:mb-6">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4">
+                                    <UserCircleIcon class="w-6 h-6 md:w-8 md:h-8 text-white" />
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm md:text-base">Sardor Toshmatov</h4>
+                                    <div class="flex text-yellow-400 mt-1">
+                                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">
+                                "IELTS Reading bo'limida ko'p yaxshilandi. Platforma juda qulay va natijalar tez!"
+                            </p>
+                            <div class="text-xs md:text-sm text-gray-500">5 kun oldin</div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                        <div class="relative p-6 md:p-8">
+                            <div class="flex items-center mb-4 md:mb-6">
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                                    <UserCircleIcon class="w-6 h-6 md:w-8 md:h-8 text-white" />
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm md:text-base">Malika Yusupova</h4>
+                                    <div class="flex text-yellow-400 mt-1">
+                                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">
+                                "Listening bo'limi juda yaxshi ishlangan. Audio sifatli va savollar aniq!"
+                            </p>
+                            <div class="text-xs md:text-sm text-gray-500">1 hafta oldin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Button -->
+                <div class="text-center">
+                    <router-link to="/reviews" class="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        Hammasini ko'rish
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>

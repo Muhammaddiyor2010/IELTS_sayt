@@ -77,9 +77,7 @@ src/
 │   ├── Price.vue          # Pricing page
 │   ├── Blogs.vue          # Blog listing
 │   ├── BlogDetail.vue     # Individual blog posts
-│   ├── Reviews.vue        # User reviews
-│   ├── Login.vue          # Login page
-│   └── Register.vue       # Registration page
+│   └── Reviews.vue        # User reviews
 ├── router/         # Vue Router configuration
 └── stores/         # Pinia stores (if using state management)
 ```
