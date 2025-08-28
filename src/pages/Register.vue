@@ -174,8 +174,11 @@
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { UserCircleIcon, EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
+import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
+const authStore = useAuthStore()
+
 const isLoading = ref(false)
 const showPassword = ref(false)
 
@@ -207,8 +210,8 @@ const validateForm = () => {
   }
 
   // Password validation
-  if (form.password.length < 8) {
-    errors.password = 'Parol kamida 8 ta belgi bo\'lishi kerak'
+  if (form.password.length < 6) {
+    errors.password = 'Parol kamida 6 ta belgi bo\'lishi kerak'
   } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(form.password)) {
     errors.password = 'Parol katta harf, kichik harf va raqam o\'z ichiga olishi kerak'
   }
@@ -225,13 +228,17 @@ const handleRegister = async () => {
   isLoading.value = true
 
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    const result = await authStore.signUp(form.email, form.password)
 
-    // Success - redirect to login or dashboard
-    router.push('/login?registered=true')
+    if (result.success) {
+      // Success - redirect to login
+      router.push('/login?registered=true')
+    } else {
+      errors.email = result.message
+    }
   } catch (error) {
     console.error('Registration error:', error)
+    errors.email = 'Tizim xatosi yuz berdi'
   } finally {
     isLoading.value = false
   }

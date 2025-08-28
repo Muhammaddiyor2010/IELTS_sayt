@@ -121,9 +121,13 @@
                 </label>
               </div>
               <div class="text-sm">
-                <router-link to="/forgot-password" class="text-green-600 hover:text-green-800 font-medium transition-colors">
+                <button
+                  type="button"
+                  @click="showForgotPassword = true"
+                  class="text-green-600 hover:text-green-800 font-medium transition-colors"
+                >
                   Parolni unutdingizmi?
-                </router-link>
+                </button>
               </div>
             </div>
 
@@ -208,6 +212,54 @@
         </div>
       </div>
     </div>
+
+    <!-- Forgot Password Modal -->
+    <div v-if="showForgotPassword" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+        <div class="text-center mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Parolni tiklash</h3>
+          <p class="text-gray-600">Email manzilingizni kiriting</p>
+        </div>
+
+        <form @submit.prevent="handleForgotPassword" class="space-y-4">
+          <div>
+            <input
+              v-model="forgotEmail"
+              type="email"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              placeholder="Email manzilingizni kiriting"
+            />
+          </div>
+
+          <div v-if="forgotError" class="bg-red-50 border border-red-200 rounded-lg p-3">
+            <p class="text-red-600 text-sm">{{ forgotError }}</p>
+          </div>
+
+          <div v-if="forgotSuccess" class="bg-green-50 border border-green-200 rounded-lg p-3">
+            <p class="text-green-600 text-sm">{{ forgotSuccess }}</p>
+          </div>
+
+          <div class="flex gap-3">
+            <button
+              type="button"
+              @click="showForgotPassword = false"
+              class="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg font-medium hover:bg-gray-300 transition-colors"
+            >
+              Bekor qilish
+            </button>
+            <button
+              type="submit"
+              :disabled="forgotLoading"
+              class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-green-700 disabled:opacity-50 transition-colors"
+            >
+              <span v-if="forgotLoading">Yuborilmoqda...</span>
+              <span v-else>Yuborish</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -215,12 +267,20 @@
 import { ref, reactive, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { UserCircleIcon, EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
+import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
 const route = useRoute()
+const authStore = useAuthStore()
+
 const isLoading = ref(false)
 const showPassword = ref(false)
 const showSuccessMessage = ref(false)
+const showForgotPassword = ref(false)
+const forgotEmail = ref('')
+const forgotLoading = ref(false)
+const forgotError = ref('')
+const forgotSuccess = ref('')
 
 const form = reactive({
   email: '',
@@ -270,23 +330,51 @@ const handleLogin = async () => {
   isLoading.value = true
 
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    const result = await authStore.signIn(form.email, form.password)
 
-    // Check for demo credentials
-    if (form.email === 'demo@example.com' && form.password === 'demo123') {
-      // Success - redirect to dashboard
-      router.push('/')
+    if (result.success) {
+      showSuccessMessage.value = true
+      setTimeout(() => {
+        router.push('/')
+      }, 1500)
     } else {
-      // Show error for invalid credentials
-      errors.email = 'Email yoki parol noto\'g\'ri'
-      errors.password = 'Email yoki parol noto\'g\'ri'
+      errors.email = result.message
+      errors.password = result.message
     }
   } catch (error) {
     console.error('Login error:', error)
     errors.email = 'Tizim xatosi yuz berdi'
   } finally {
     isLoading.value = false
+  }
+}
+
+const handleForgotPassword = async () => {
+  if (!forgotEmail.value) {
+    forgotError.value = 'Email manzilini kiriting'
+    return
+  }
+
+  try {
+    forgotLoading.value = true
+    forgotError.value = ''
+    forgotSuccess.value = ''
+
+    const result = await authStore.resetPassword(forgotEmail.value)
+
+    if (result.success) {
+      forgotSuccess.value = result.message
+      setTimeout(() => {
+        showForgotPassword.value = false
+        forgotEmail.value = ''
+      }, 2000)
+    } else {
+      forgotError.value = result.message
+    }
+  } catch (error) {
+    forgotError.value = 'Parol tiklashda xatolik yuz berdi'
+  } finally {
+    forgotLoading.value = false
   }
 }
 
