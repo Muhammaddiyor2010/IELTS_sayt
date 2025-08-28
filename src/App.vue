@@ -113,10 +113,10 @@
             <div v-else class="flex items-center space-x-2 sm:space-x-3">
               <div class="flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-purple-50 px-3 sm:px-4 py-2 rounded-lg">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <span class="text-white text-xs sm:text-sm font-bold">{{ user.firstName.charAt(0) }}{{ user.lastName.charAt(0) }}</span>
+                  <span class="text-white text-xs sm:text-sm font-bold">{{ user.firstName?.charAt(0) || '' }}{{ user.lastName?.charAt(0) || '' }}</span>
                 </div>
                 <span class="font-semibold text-gray-700 text-xs sm:text-sm hidden sm:block">
-                  {{ user.firstName }} {{ user.lastName }}
+                  {{ user.firstName || '' }} {{ user.lastName || '' }}
                 </span>
               </div>
 

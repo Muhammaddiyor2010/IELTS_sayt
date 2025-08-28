@@ -87,8 +87,8 @@
           </div>
 
           <!-- Error Message -->
-          <div v-if="error" class="bg-red-50 border border-red-200 rounded-lg p-4">
-            <p class="text-red-600 text-sm">{{ error }}</p>
+          <div v-if="error || localError" class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="text-red-600 text-sm">{{ error || localError }}</p>
           </div>
 
           <!-- Success Message -->
@@ -149,6 +149,8 @@ import { useAuth } from '../composables/useAuth'
 const router = useRouter()
 const { signUp, loading, error } = useAuth()
 
+const localError = ref<string | null>(null)
+
 const successMessage = ref('')
 
 const form = reactive({
@@ -165,13 +167,13 @@ const handleSignUp = async () => {
   
   // Validate passwords match
   if (form.password !== form.confirmPassword) {
-    error.value = 'Parollar mos kelmadi'
+    localError.value = 'Parollar mos kelmadi'
     return
   }
 
   // Validate password length
   if (form.password.length < 6) {
-    error.value = 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak'
+    localError.value = 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak'
     return
   }
 
