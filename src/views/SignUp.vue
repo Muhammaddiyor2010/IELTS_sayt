@@ -165,11 +165,13 @@ const handleSignUp = async () => {
   
   // Validate passwords match
   if (form.password !== form.confirmPassword) {
+    error.value = 'Parollar mos kelmadi'
     return
   }
 
   // Validate password length
   if (form.password.length < 6) {
+    error.value = 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak'
     return
   }
 
@@ -183,6 +185,10 @@ const handleSignUp = async () => {
     form.email = ''
     form.password = ''
     form.confirmPassword = ''
+    // Redirect to home after successful signup
+    setTimeout(() => {
+      router.push('/')
+    }, 2000)
   }
 }
 </script>
