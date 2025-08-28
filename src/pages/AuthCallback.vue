@@ -61,8 +61,8 @@ onMounted(async () => {
     } else {
       error.value = 'Sessiya topilmadi'
     }
-  } catch (err: any) {
-    error.value = err.message || 'Xatolik yuz berdi'
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'Xatolik yuz berdi'
   } finally {
     loading.value = false
   }
