@@ -149,7 +149,7 @@ import { useAuth } from '../composables/useAuth'
 const router = useRouter()
 const { signUp, loading, error } = useAuth()
 
-const localError = ref<string | null>(null)
+const localError = ref<string>('')
 
 const successMessage = ref('')
 

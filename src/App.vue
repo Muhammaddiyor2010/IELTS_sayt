@@ -1,82 +1,55 @@
 <template>
-  <div>
-    <nav class="bg-white/95 backdrop-blur-md shadow-xl sticky top-0 z-50 border-b border-gray-100">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center py-4 sm:py-5">
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
           <!-- Logo -->
-          <div class="flex items-center space-x-2 sm:space-x-3">
-            <div class="bg-gradient-to-br from-blue-600 to-purple-600 p-1.5 sm:p-2 rounded-xl shadow-lg">
-              <span class="text-white text-base sm:text-lg md:text-xl font-bold">🎯</span>
-            </div>
-            <div>
-              <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                ExamMaster
-              </h1>
-              <p class="text-xs text-gray-500 hidden sm:block">Professional Test Platform</p>
-            </div>
+          <div class="flex items-center">
+            <router-link to="/" class="flex items-center space-x-2">
+              <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-lg">I</span>
+              </div>
+              <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                IELTS
+              </span>
+            </router-link>
           </div>
 
-          <!-- Tablet Navigation (768px) - Compact version -->
-          <div class="hidden md:flex lg:hidden items-center space-x-1">
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
             <a @click="scrollToSection('home')"
-               class="group relative px-2 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 cursor-pointer rounded-lg hover:bg-blue-50">
-              <span class="relative z-10 text-sm">Bosh sahifa</span>
+               class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+              <span class="relative z-10">Bosh sahifa</span>
               <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </a>
 
             <a @click="scrollToSection('tests')"
-               class="group relative px-2 py-2 text-gray-700 hover:text-green-600 transition-all duration-300 cursor-pointer rounded-lg hover:bg-green-50">
-              <span class="relative z-10 text-sm">Testlar</span>
-              <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+               class="group relative px-3 py-2 text-gray-700 hover:text-green-600 transition-all duration-300 cursor-pointer">
+              <span class="relative z-10">Testlar</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </a>
 
             <router-link to="/blogs"
-                         class="group relative px-2 py-2 text-gray-700 hover:text-purple-600 transition-all duration-300 rounded-lg hover:bg-purple-50">
-              <span class="relative z-10 text-sm">Bloglar</span>
+                         class="group relative px-3 py-2 text-gray-700 hover:text-purple-600 transition-all duration-300">
+              <span class="relative z-10">Bloglar</span>
               <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </router-link>
 
             <router-link to="/reviews"
-                         class="group relative px-2 py-2 text-gray-700 hover:text-orange-600 transition-all duration-300 rounded-lg hover:bg-orange-50">
-              <span class="relative z-10 text-sm">Fikrlar</span>
-              <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </router-link>
-          </div>
-
-          <!-- Desktop Navigation (1024px+) -->
-          <div class="hidden lg:flex items-center space-x-1">
-            <a @click="scrollToSection('home')"
-               class="group relative px-3 lg:px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 cursor-pointer rounded-lg hover:bg-blue-50">
-              <span class="relative z-10 text-sm lg:text-base">Bosh sahifa</span>
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </a>
-
-            <a @click="scrollToSection('tests')"
-               class="group relative px-3 lg:px-4 py-2 text-gray-700 hover:text-green-600 transition-all duration-300 cursor-pointer rounded-lg hover:bg-green-50">
-              <span class="relative z-10 text-sm lg:text-base">Testlar</span>
-              <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </a>
-
-            <router-link to="/blogs"
-                         class="group relative px-3 lg:px-4 py-2 text-gray-700 hover:text-purple-600 transition-all duration-300 rounded-lg hover:bg-purple-50">
-              <span class="relative z-10 text-sm lg:text-base">Bloglar</span>
-              <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </router-link>
-
-            <router-link to="/reviews"
-                         class="group relative px-3 lg:px-4 py-2 text-gray-700 hover:text-orange-600 transition-all duration-300 rounded-lg hover:bg-orange-50">
-              <span class="relative z-10 text-sm lg:text-base">Fikrlar</span>
+                         class="group relative px-3 py-2 text-gray-700 hover:text-orange-600 transition-all duration-300">
+              <span class="relative z-10">Fikrlar</span>
               <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </router-link>
 
             <a @click="scrollToSection('about')"
-               class="group relative px-3 lg:px-4 py-2 text-gray-700 hover:text-indigo-600 transition-all duration-300 cursor-pointer rounded-lg hover:bg-indigo-50">
-              <span class="relative z-10 text-sm lg:text-base">Biz haqimizda</span>
+               class="group relative px-3 py-2 text-gray-700 hover:text-indigo-600 transition-all duration-300 cursor-pointer">
+              <span class="relative z-10">Biz haqimizda</span>
               <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </a>
           </div>
 
-          <!-- Mobile menu button -->
+          <!-- Mobile Menu Button -->
           <div class="md:hidden">
             <button @click="toggleMobileMenu"
                     class="group relative p-2 text-gray-600 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50">
@@ -113,10 +86,10 @@
             <div v-else class="flex items-center space-x-2 sm:space-x-3">
               <div class="flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-purple-50 px-3 sm:px-4 py-2 rounded-lg">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <span class="text-white text-xs sm:text-sm font-bold">{{ user.firstName?.charAt(0) || '' }}{{ user.lastName?.charAt(0) || '' }}</span>
+                  <span class="text-white text-xs sm:text-sm font-bold">{{ getUserInitials() }}</span>
                 </div>
                 <span class="font-semibold text-gray-700 text-xs sm:text-sm hidden sm:block">
-                  {{ user.firstName || '' }} {{ user.lastName || '' }}
+                  {{ getUserName() }}
                 </span>
               </div>
 
@@ -188,6 +161,20 @@ const { user, signOut, getSession, initAuth } = useAuth();
 const mobileMenuOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
+
+const getUserInitials = () => {
+  if (!user.value) return '';
+  const firstName = user.value.firstName || '';
+  const lastName = user.value.lastName || '';
+  return (firstName.charAt(0) + lastName.charAt(0)).toUpperCase();
+};
+
+const getUserName = () => {
+  if (!user.value) return '';
+  const firstName = user.value.firstName || '';
+  const lastName = user.value.lastName || '';
+  return `${firstName} ${lastName}`.trim();
+};
 
 const scrollToSection = (sectionId: string) => {
   if (route.path !== '/') {
