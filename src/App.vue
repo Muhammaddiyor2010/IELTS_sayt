@@ -183,12 +183,19 @@
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
-const user = ref(null);
+// Define user interface
+interface User {
+  firstName: string;
+  lastName: string;
+  [key: string]: any; // Allow additional properties
+}
+
+const user = ref<User | null>(null);
 const mobileMenuOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
 
-const scrollToSection = (sectionId) => {
+const scrollToSection = (sectionId: string) => {
   if (route.path !== '/') {
     router.push('/').then(() => {
       setTimeout(() => {
@@ -212,7 +219,7 @@ const scrollToSection = (sectionId) => {
   }
 };
 
-const scrollToSectionMobile = (sectionId) => {
+const scrollToSectionMobile = (sectionId: string) => {
   mobileMenuOpen.value = false;
   scrollToSection(sectionId);
 };
