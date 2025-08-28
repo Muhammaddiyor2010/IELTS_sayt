@@ -77,4 +77,16 @@ const router = createRouter({
   routes,
 })
 
+// Global navigation guard to scroll to top on route change
+router.beforeEach((to, from, next) => {
+  // Scroll to top when navigating to a new route
+  if (to.path !== from.path) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  next();
+});
+
 export default router

@@ -153,7 +153,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useAuth } from "./composables/useAuth";
 
@@ -217,6 +217,14 @@ const logout = async () => {
 onMounted(() => {
   initAuth();
   getSession();
+});
+
+// Watch for route changes and scroll to top
+watch(() => route.path, () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 </script>
 
