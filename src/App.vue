@@ -96,13 +96,13 @@
 
             <!-- Authentication Buttons -->
             <div v-if="!user" class="flex items-center space-x-2 sm:space-x-3">
-              <router-link to="/login"
+              <router-link to="/signin"
                           class="group relative px-3 sm:px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50">
                 <span class="relative z-10 text-sm sm:text-base">Kirish</span>
                 <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </router-link>
 
-              <router-link to="/register"
+              <router-link to="/signup"
                           class="group relative px-4 sm:px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <span class="relative z-10 text-sm sm:text-base">Ro'yxatdan o'tish</span>
                 <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -182,15 +182,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import { useAuth } from "./composables/useAuth";
 
-// Define user interface
-interface User {
-  firstName: string;
-  lastName: string;
-  [key: string]: any; // Allow additional properties
-}
-
-const user = ref<User | null>(null);
+const { user, signOut, getSession, initAuth } = useAuth();
 const mobileMenuOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
@@ -228,17 +222,14 @@ const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 };
 
-const logout = () => {
-  localStorage.removeItem("user");
-  user.value = null;
+const logout = async () => {
+  await signOut();
   router.push('/');
 };
 
 onMounted(() => {
-  const savedUser = localStorage.getItem("user");
-  if (savedUser) {
-    user.value = JSON.parse(savedUser);
-  }
+  initAuth();
+  getSession();
 });
 </script>
 

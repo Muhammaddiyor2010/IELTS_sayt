@@ -51,14 +51,14 @@ const routes = [
     component: () => import('../pages/Price.vue'),
   },
   {
-    path: '/register',
-    name: 'register',
-    component: () => import('../pages/Register.vue'),
+    path: '/signup',
+    name: 'signup',
+    component: () => import('../views/SignUp.vue'),
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../pages/Login.vue'),
+    path: '/signin',
+    name: 'signin',
+    component: () => import('../views/SignIn.vue'),
   },
   {
     path: '/reset-password',
