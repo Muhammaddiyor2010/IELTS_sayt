@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center px-4 py-8">
-    <div class="max-w-md w-full">
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center px-4 sm:px-6 py-8">
+    <div class="w-full max-w-md sm:max-w-lg">
       <!-- Header -->
       <div class="text-center mb-8">
         <h1 class="text-3xl font-bold text-gray-900 mb-2">Ro'yxatdan o'tish</h1>
@@ -8,7 +8,7 @@
       </div>
 
       <!-- Sign Up Form -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+      <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-100">
         <form @submit.prevent="handleSignUp" class="space-y-6">
           <!-- First Name -->
           <div>
