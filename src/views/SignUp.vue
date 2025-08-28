@@ -149,7 +149,7 @@ import { useAuth } from '../composables/useAuth'
 const router = useRouter()
 const { signUp, loading, error } = useAuth()
 
-const localError = ref<string>('')
+const localError = ref<string | null>(null)
 
 const successMessage = ref('')
 
@@ -164,6 +164,7 @@ const form = reactive({
 const handleSignUp = async () => {
   // Reset messages
   successMessage.value = ''
+  localError.value = null
   
   // Validate passwords match
   if (form.password !== form.confirmPassword) {
