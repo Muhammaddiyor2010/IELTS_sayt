@@ -1,15 +1,15 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center px-4 sm:px-6 py-8">
-    <div class="w-full max-w-md sm:max-w-lg">
+    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg">
       <!-- Header -->
-      <div class="text-center mb-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">Tizimga kirish</h1>
-        <p class="text-gray-600">IELTS tayyorgarlik platformasiga xush kelibsiz</p>
+      <div class="text-center mb-6 sm:mb-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Tizimga kirish</h1>
+        <p class="text-sm sm:text-base text-gray-600">IELTS tayyorgarlik platformasiga xush kelibsiz</p>
       </div>
 
       <!-- Sign In Form -->
-      <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-100">
-        <form @submit.prevent="handleSignIn" class="space-y-6">
+      <div class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 border border-gray-100">
+        <form @submit.prevent="handleSignIn" class="space-y-4 sm:space-y-6">
           <!-- Email -->
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
@@ -20,7 +20,7 @@
               v-model="form.email"
               type="email"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
               placeholder="example@email.com"
             />
           </div>
@@ -35,7 +35,7 @@
               v-model="form.password"
               type="password"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
               placeholder="Parolingizni kiriting"
             />
           </div>
@@ -105,7 +105,7 @@ const form = reactive({
 
 const handleSignIn = async () => {
   const result = await signIn(form.email, form.password)
-  
+
   if (result.success) {
     router.push('/')
   }

@@ -64,38 +64,38 @@
             </div>
             <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
                 <div class="mb-8">
-                    <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-4xl sm:text-5xl md:text-8xl font-bold text-white mb-6 leading-tight">
                         <span class="block" ref="mainTitle">ExamMaster</span>
-                        <span class="text-3xl md:text-4xl font-light text-blue-100 mt-4 block" ref="subTitle">Eng yaxshi test platformasi</span>
+                        <span class="text-xl sm:text-2xl md:text-4xl font-light text-blue-100 mt-4 block" ref="subTitle">Eng yaxshi test platformasi</span>
                     </h1>
-                    <p class="text-2xl md:text-3xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                    <p class="text-lg sm:text-xl md:text-3xl text-blue-100 mb-8 max-w-3xl mx-auto">
                         IELTS va SAT imtihonlariga professional tayyorgarlik. Real vaqtda natijalar va batafsil tahlillar.
                     </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-                    <button class="group relative px-10 py-5 bg-white text-blue-600 font-semibold rounded-full text-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12">
+                    <button class="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-white text-blue-600 font-semibold rounded-full text-base sm:text-lg md:text-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
                         <span class="relative z-10">Boshlash</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
-                    <router-link to="/demo-test" class="px-10 py-5 border-2 border-white text-white font-semibold rounded-full text-xl hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
+                    <router-link to="/demo-test" class="px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 border-2 border-white text-white font-semibold rounded-full text-base sm:text-lg md:text-xl hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
                         Demo ko'rish
                     </router-link>
                 </div>
 
                 <!-- Stats -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-16 sm:mt-20">
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-3">
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-3">
                             <span class="counter-animation" ref="userCount">0</span>K+
                         </div>
-                        <div class="text-blue-100 text-lg">Foydalanuvchilar</div>
+                        <div class="text-blue-100 text-base sm:text-lg">Foydalanuvchilar</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-3">
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-3">
                             <span class="counter-animation" ref="successRate">0</span>%
                         </div>
-                        <div class="text-blue-100 text-lg">Muvaffaqiyat darajasi</div>
+                        <div class="text-blue-100 text-base sm:text-lg">Muvaffaqiyat darajasi</div>
                     </div>
                     <div class="text-center">
                         <div class="text-3xl md:text-4xl font-bold text-white mb-2">
