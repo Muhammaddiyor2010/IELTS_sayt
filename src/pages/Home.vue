@@ -84,24 +84,24 @@
                 </div>
 
                 <!-- Stats -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-3 md:gap-8 mt-12 sm:mt-16 md:mt-20">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2 md:gap-8 mt-12 sm:mt-8 md:mt-20">
                     <div class="text-center">
-                        <div class="text-2xl xs:text-3xl sm:text-2xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
+                        <div class="text-2xl xs:text-3xl sm:text-lg md:text-5xl font-bold text-white mb-1 sm:mb-1 md:mb-3">
                             <span class="counter-animation" ref="userCount">0</span>K+
                         </div>
-                        <div class="text-blue-100 text-sm xs:text-base sm:text-sm md:text-lg">Foydalanuvchilar</div>
+                        <div class="text-blue-100 text-sm xs:text-base sm:text-xs md:text-lg">Foydalanuvchilar</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl xs:text-3xl sm:text-2xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
+                        <div class="text-2xl xs:text-3xl sm:text-lg md:text-5xl font-bold text-white mb-1 sm:mb-1 md:mb-3">
                             <span class="counter-animation" ref="successRate">0</span>%
                         </div>
-                        <div class="text-blue-100 text-sm xs:text-base sm:text-sm md:text-lg">Muvaffaqiyat darajasi</div>
+                        <div class="text-blue-100 text-sm xs:text-base sm:text-xs md:text-lg">Muvaffaqiyat darajasi</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl xs:text-3xl sm:text-2xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
+                        <div class="text-2xl xs:text-3xl sm:text-lg md:text-5xl font-bold text-white mb-1 sm:mb-1 md:mb-3">
                             <span class="counter-animation" ref="support">0</span>/7
                         </div>
-                        <div class="text-blue-100 text-sm xs:text-base sm:text-sm md:text-lg">Qo'llab-quvvatlash</div>
+                        <div class="text-blue-100 text-sm xs:text-base sm:text-xs md:text-lg">Qo'llab-quvvatlash</div>
                     </div>
                 </div>
             </div>
