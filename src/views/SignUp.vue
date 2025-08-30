@@ -151,7 +151,7 @@ const { signUp, loading, error } = useAuth()
 
 const localError = ref<string | null>(null)
 
-const successMessage = ref('')
+const successMessage = ref<string>('')
 
 const form = reactive({
   firstName: '',
@@ -181,7 +181,7 @@ const handleSignUp = async () => {
   const result = await signUp(form.email, form.password, form.firstName, form.lastName)
 
   if (result.success) {
-    successMessage.value = result.message
+    successMessage.value = result.message || 'Muvaffaqiyatli ro\'yxatdan o\'tdingiz!'
     // Clear form
     form.firstName = ''
     form.lastName = ''
