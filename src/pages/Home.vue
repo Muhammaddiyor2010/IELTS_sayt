@@ -84,24 +84,24 @@
                 </div>
 
                 <!-- Stats -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16 md:mt-20">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-3 md:gap-8 mt-12 sm:mt-16 md:mt-20">
                     <div class="text-center">
-                        <div class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
+                        <div class="text-2xl xs:text-3xl sm:text-2xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
                             <span class="counter-animation" ref="userCount">0</span>K+
                         </div>
-                        <div class="text-blue-100 text-sm xs:text-base sm:text-lg">Foydalanuvchilar</div>
+                        <div class="text-blue-100 text-sm xs:text-base sm:text-sm md:text-lg">Foydalanuvchilar</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
+                        <div class="text-2xl xs:text-3xl sm:text-2xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
                             <span class="counter-animation" ref="successRate">0</span>%
                         </div>
-                        <div class="text-blue-100 text-sm xs:text-base sm:text-lg">Muvaffaqiyat darajasi</div>
+                        <div class="text-blue-100 text-sm xs:text-base sm:text-sm md:text-lg">Muvaffaqiyat darajasi</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-white mb-2">
+                        <div class="text-2xl xs:text-3xl sm:text-2xl md:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3">
                             <span class="counter-animation" ref="support">0</span>/7
                         </div>
-                        <div class="text-blue-100">Qo'llab-quvvatlash</div>
+                        <div class="text-blue-100 text-sm xs:text-base sm:text-sm md:text-lg">Qo'llab-quvvatlash</div>
                     </div>
                 </div>
             </div>
