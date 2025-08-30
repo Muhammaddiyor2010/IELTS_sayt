@@ -61,11 +61,6 @@ const routes = [
     component: () => import('../views/SignIn.vue'),
   },
   {
-    path: '/reset-password',
-    name: 'reset-password',
-    component: () => import('../pages/ResetPassword.vue'),
-  },
-      {
       path: '/demo-test',
       name: 'demo-test',
       component: () => import('../pages/DemoTest.vue'),
