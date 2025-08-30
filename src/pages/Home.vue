@@ -65,7 +65,7 @@
             <div class="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-4xl mx-auto">
                 <div class="mb-4 sm:mb-6 md:mb-8">
                     <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                        <span class="block" ref="mainTitle">ExamMaster</span>
+                        <span class="block" ref="mainTitle">IELTS HUB UZ</span>
                         <span class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-blue-100 mt-2 sm:mt-4 block" ref="subTitle">Eng yaxshi test platformasi</span>
                     </h1>
                     <p class="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-100 mb-6 sm:mb-8 max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-3xl mx-auto">
@@ -505,7 +505,7 @@ onMounted(() => {
 
     // Letter animations
     setTimeout(() => {
-        animateLetters(mainTitle.value, 'ExamMaster')
+        animateLetters(mainTitle.value, 'IELTS HUB UZ')
         animateLetters(subTitle.value, 'Eng yaxshi test platformasi')
     }, 500)
 })
