@@ -203,10 +203,11 @@ const questionsPerGroup = 1
 const passages = ref([
   {
     id: 1,
-    title: "Climate Change and Its Effects",
-    text: `<p class="mb-4">Climate change is one of the most pressing issues facing humanity today. The Earth's average temperature has increased by approximately 1.1°C since pre-industrial times, and this warming trend is expected to continue unless significant action is taken.</p>
-    <p class="mb-4">The primary cause of climate change is the increase in greenhouse gas concentrations in the atmosphere, particularly carbon dioxide (CO2). These gases trap heat from the sun, creating a "greenhouse effect" that warms the planet.</p>
-    <p class="mb-4">The effects of climate change are already being felt around the world. Rising sea levels threaten coastal communities, extreme weather events are becoming more frequent and intense, and ecosystems are being disrupted.</p>`
+    title: "The Future of Urban Farming",
+    text: `<p class="mb-4">Urban farming, the practice of growing food in cities, is gaining momentum as populations continue to rise and concerns about sustainability increase. Rooftop gardens, vertical farms, and community allotments are appearing in metropolitan areas worldwide. These projects aim to bring food production closer to consumers, thereby reducing the environmental costs of long-distance transportation.</p>
+    <p class="mb-4">Advocates claim that urban farming can play a significant role in ensuring food security, especially in densely populated regions where land is scarce. By using innovative techniques such as hydroponics and aeroponics, crops can be grown with minimal water and without soil. Furthermore, urban farms may improve social cohesion, as local communities work together to maintain them.</p>
+    <p class="mb-4">Nevertheless, challenges remain. The initial cost of setting up vertical farms can be extremely high, and many city governments are uncertain about how to regulate these new agricultural methods. In addition, critics argue that while urban farming is beneficial, it cannot replace large-scale rural agriculture, which still produces the majority of the world's food supply.</p>
+    <p class="mb-4">Despite these difficulties, urban farming continues to expand. In cities such as Singapore and Tokyo, commercial vertical farms supply supermarkets with fresh produce daily. Many experts believe that as technology develops, urban farming will become an increasingly important part of the global food system.</p>`
   },
   {
     id: 2,
@@ -227,19 +228,19 @@ const passages = ref([
 // Sample questions (40 total)
 const allQuestions = ref([
   // Passage 1 questions (1-13)
-  { number: 1, text: "What is the main cause of climate change?", type: "multiple-choice", options: ["Volcanic eruptions", "Greenhouse gas concentrations", "Solar flares", "Ocean currents"], answer: "", correctAnswer: "Greenhouse gas concentrations", passage: 1 },
-  { number: 2, text: "How much has the Earth's average temperature increased?", type: "multiple-choice", options: ["0.5°C", "1.1°C", "2.0°C", "3.5°C"], answer: "", correctAnswer: "1.1°C", passage: 1 },
-  { number: 3, text: "Climate change is not affecting ecosystems yet.", type: "true-false", answer: "", correctAnswer: "False", passage: 1 },
-  { number: 4, text: "Which gas is mentioned as the main greenhouse gas?", type: "fill-blank", answer: "", correctAnswer: "carbon dioxide", passage: 1 },
-  { number: 5, text: "Rising sea levels threaten coastal communities.", type: "true-false", answer: "", correctAnswer: "True", passage: 1 },
-  { number: 6, text: "What creates the greenhouse effect?", type: "multiple-choice", options: ["Ozone layer", "Greenhouse gases", "Clouds", "Wind"], answer: "", correctAnswer: "Greenhouse gases", passage: 1 },
-  { number: 7, text: "Extreme weather events are becoming less frequent.", type: "true-false", answer: "", correctAnswer: "False", passage: 1 },
-  { number: 8, text: "What type of communities are threatened by sea level rise?", type: "fill-blank", answer: "", correctAnswer: "coastal communities", passage: 1 },
-  { number: 9, text: "Ecosystems are being disrupted by climate change.", type: "true-false", answer: "", correctAnswer: "True", passage: 1 },
-  { number: 10, text: "What is the warming trend expected to do?", type: "multiple-choice", options: ["Stop immediately", "Continue", "Reverse", "Stay the same"], answer: "", correctAnswer: "Continue", passage: 1 },
-  { number: 11, text: "Human activities have increased greenhouse gas concentrations.", type: "true-false", answer: "", correctAnswer: "True", passage: 1 },
-  { number: 12, text: "What is the most pressing issue mentioned?", type: "fill-blank", answer: "", correctAnswer: "climate change", passage: 1 },
-  { number: 13, text: "The Earth's temperature has decreased since pre-industrial times.", type: "true-false", answer: "", correctAnswer: "False", passage: 1 },
+  { number: 1, text: "What is urban farming?", type: "multiple-choice", options: ["Growing food in cities", "Rural agriculture", "Forest farming", "Desert farming"], answer: "", correctAnswer: "Growing food in cities", passage: 1 },
+  { number: 2, text: "Urban farming is gaining momentum due to rising populations.", type: "true-false", answer: "", correctAnswer: "True", passage: 1 },
+  { number: 3, text: "What type of gardens are mentioned as appearing worldwide?", type: "fill-blank", answer: "", correctAnswer: "rooftop gardens", passage: 1 },
+  { number: 4, text: "Urban farming aims to reduce environmental costs of what?", type: "multiple-choice", options: ["Local production", "Long-distance transportation", "City planning", "Food storage"], answer: "", correctAnswer: "Long-distance transportation", passage: 1 },
+  { number: 5, text: "Urban farming can ensure food security in densely populated regions.", type: "true-false", answer: "", correctAnswer: "True", passage: 1 },
+  { number: 6, text: "What innovative techniques are mentioned for growing crops?", type: "fill-blank", answer: "", correctAnswer: "hydroponics and aeroponics", passage: 1 },
+  { number: 7, text: "Urban farms require large amounts of water.", type: "true-false", answer: "", correctAnswer: "False", passage: 1 },
+  { number: 8, text: "What is one challenge of setting up vertical farms?", type: "multiple-choice", options: ["Low initial cost", "Extremely high initial cost", "Easy setup", "No regulation needed"], answer: "", correctAnswer: "Extremely high initial cost", passage: 1 },
+  { number: 9, text: "City governments know exactly how to regulate urban farming.", type: "true-false", answer: "", correctAnswer: "False", passage: 1 },
+  { number: 10, text: "According to critics, what still produces the majority of food?", type: "fill-blank", answer: "", correctAnswer: "large-scale rural agriculture", passage: 1 },
+  { number: 11, text: "Urban farming continues to expand despite challenges.", type: "true-false", answer: "", correctAnswer: "True", passage: 1 },
+  { number: 12, text: "Which cities are mentioned as having commercial vertical farms?", type: "multiple-choice", options: ["London and Paris", "Singapore and Tokyo", "New York and Berlin", "Sydney and Mumbai"], answer: "", correctAnswer: "Singapore and Tokyo", passage: 1 },
+  { number: 13, text: "What do experts believe about urban farming's future?", type: "fill-blank", answer: "", correctAnswer: "increasingly important part", passage: 1 },
 
   // Passage 2 questions (14-26)
   { number: 14, text: "When was the term 'Artificial Intelligence' first coined?", type: "multiple-choice", options: ["1940s", "1950s", "1960s", "1970s"], answer: "", correctAnswer: "1950s", passage: 2 },
