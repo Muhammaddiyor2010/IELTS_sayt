@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-4 xs:mb-6 sm:mb-8">
         <h1 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 xs:mb-2">Tizimga kirish</h1>
-        <p class="text-xs xs:text-sm sm:text-base md:text-lg text-gray-600">IELTS HUB UZ platformasiga xush kelibsiz</p>
+        <p class="text-xs xs:text-sm sm:text-base md:text-lg text-gray-600">IELTS HUB platformasiga xush kelibsiz</p>
       </div>
 
       <!-- Sign In Form -->

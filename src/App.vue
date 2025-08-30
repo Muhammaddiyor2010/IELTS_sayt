@@ -13,7 +13,7 @@
                 </svg>
               </div>
               <span class="text-lg xs:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                IELTS HUB UZ
+                IELTS HUB
               </span>
             </router-link>
           </div>
@@ -268,42 +268,42 @@ html {
     font-size: 2.5rem;
     line-height: 3rem;
   }
-  
+
   .text-7xl {
     font-size: 3.5rem;
     line-height: 4rem;
   }
-  
+
   .h-\[600px\] {
     height: 400px;
   }
-  
+
   .h-\[620px\] {
     height: 420px;
   }
-  
+
   .py-20 {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-  
+
   .px-8 {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .p-8 {
     padding: 1.5rem;
   }
-  
+
   .gap-8 {
     gap: 1.5rem;
   }
-  
+
   .grid-cols-3 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  
+
   .grid-cols-4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -314,20 +314,20 @@ html {
     font-size: 4rem;
     line-height: 4.5rem;
   }
-  
+
   .h-\[600px\] {
     height: 500px;
   }
-  
+
   .h-\[620px\] {
     height: 520px;
   }
-  
+
   .py-20 {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  
+
   .grid-cols-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -372,7 +372,7 @@ html {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   input, textarea, select {
     font-size: 16px; /* Prevents zoom on iOS */
   }
@@ -389,7 +389,7 @@ html {
     z-index: 50;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
+
   .mobile-menu-content {
     position: absolute;
     top: 0;
@@ -401,7 +401,7 @@ html {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
-  
+
   .mobile-menu.open .mobile-menu-content {
     transform: translateX(0);
   }
